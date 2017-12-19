@@ -1,4 +1,4 @@
-# junit-browserstack
+# junit-browserstack with Jenkins Integration
 [JUnit](http://junit.org/junit4/) Integration with BrowserStack.
 
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780) 
@@ -14,6 +14,14 @@
 * To run a single test, run `mvn test -P single`
 * To run local tests, run `mvn test -P local`
 * To run parallel tests, run `mvn test -P parallel`
+
+## Setup Job in Jenkins
+* Install BrowserStack Plugin for Jenkins
+* Create a new Maven Job in Jenkins
+* On the Job configuration page, check 'BrowserStack' under 'Build Environment'
+* On the Job configuration page, specify Root POM path. Under Goals and Options, specify any goal listed above (example: test -P single)
+* On the Job configuration  page, select 'Additional test report features' and check 'Embed BrowserStack Report'
+* Save the Job and run it.
 
  Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
 
