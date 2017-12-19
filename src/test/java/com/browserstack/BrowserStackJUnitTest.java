@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Iterator;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;;
+import org.json.simple.parser.JSONParser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -75,11 +75,13 @@ public class BrowserStackJUnitTest {
         }
 
         String username = System.getenv("BROWSERSTACK_USERNAME");
+
         if(username == null) {
             username = (String) config.get("user");
         }
 
-        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        String accessKey = System.getenv("BROWSERSTACK_KEY");
+        
         if(accessKey == null) {
             accessKey = (String) config.get("key");
         }
